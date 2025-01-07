@@ -1,4 +1,6 @@
-﻿namespace AppDelivery.App
+﻿using AppDelivery.App.Vistas;
+
+namespace AppDelivery.App
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new Login();
         }
     }
 }

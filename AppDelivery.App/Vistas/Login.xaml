@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppDelivery.App.Vistas.Login"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             Title="Login"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions=".3*,.7*">
+        <Image Aspect="AspectFill" Source="https://i.ibb.co/gw5m9XM/food2.jpg"/>
+        <Grid BackgroundColor="#4F3F9B" Opacity=".9"/>
+        <Grid ColumnDefinitions="*,*">
+            <Image Aspect="AspectFit"
+                   HeightRequest="100"
+                   Source="logo.png"/>
+            <skia:SKLottieView Grid.Column="1"
+                           WidthRequest="200"
+                           RepeatCount="-1"
+                           Source="animation.json"/>           
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <RoundRectangle Margin="-5,-30,-5,-2"
+                    CornerRadius="30,30,0,0"
+                    Fill="White"/>
+            <VerticalStackLayout Margin="30,0,30,0">
+                <Label FontAttributes="Bold"
+                       FontFamily="Lato-Bold"
+                       FontSize="Medium"
+                       Text="Bienvenido!"
+                       TextColor="#2D2D2D"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,7 +1,6 @@
 ﻿using DeliveryApp.Shared.Modelos;
 using Firebase.Database;
 using Firebase.Database.Query;
-using System.Text.Json;
 
 namespace DeliveryApp.Shared.Helpers
 {

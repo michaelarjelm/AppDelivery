@@ -6,4 +6,14 @@ public partial class Login : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void btnLogin_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnCrearCuenta_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }

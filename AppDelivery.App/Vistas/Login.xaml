@@ -29,6 +29,75 @@
                        FontSize="Medium"
                        Text="Bienvenido!"
                        TextColor="#2D2D2D"/>
+                <Label FontFamily="Lato-Regular"
+                       Text="Ingresa tus credenciales"
+                       TextColor="#A3A3A4"/>
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                    <RoundRectangle BackgroundColor="#EDEBF6"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="60"/>
+                    <Image HorizontalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource 
+                                FontFamily="AwesomeSolid"
+                                Glyph="&#xf0e0;"
+                                Size="44"
+                                Color="#4F3F9B"/>
+                        </Image.Source>
+                    </Image>
+                    <Entry Grid.Column="1"
+                           Placeholder="Correo Electronico"
+                           VerticalOptions="Center"
+                           x:Name="entryUserName"/>                 
+
+                </Grid>
+                <Grid Margin="0,30,0,0" ColumnDefinitions=".2*,.8*">
+                    <RoundRectangle BackgroundColor="#EDEBF6"
+                    CornerRadius="10"
+                    HeightRequest="60"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    WidthRequest="60"/>
+                    <Image HorizontalOptions="Center">
+                        <Image.Source>
+                            <FontImageSource 
+                                FontFamily="AwesomeSolid"
+                                Glyph="&#xf084;"
+                                Size="44"
+                                Color="#4F3F9B"/>
+                        </Image.Source>
+                    </Image>
+                            <Entry Grid.Column="1"
+                                   Placeholder="Contraseña"
+                                   IsPassword="True"
+                                    VerticalOptions="Center"
+                                    x:Name="entryPassword"/>
+                </Grid>
+                <Button
+                    x:Name="btnLogin"
+                    Margin="0,20,0,0"
+                    Background="#4F3F9B"
+                    HeightRequest="60"
+                    Text="Iniciar Sesión"
+                    TextColor="#FBF6FD"
+                    Clicked="btnLogin_Clicked"/>
+                <Label Margin="0,20,0,-10"
+                       BackgroundColor="#FBF6FD"
+                       Text="¿Olvidaste tu contraseña?"
+                       TextColor="Blue"
+                       TextDecorations="Underline"
+                       HorizontalOptions="Center"/>
+                <Button
+                    x:Name="btnCrearCuenta"
+                    Margin="0,30,0,0"
+                    BackgroundColor="White"
+                    HeightRequest="60"
+                    Text="Crear tu cuenta"
+                    TextColor="#4F3F9B"
+                    Clicked="btnCrearCuenta_Clicked"/>
             </VerticalStackLayout>
         </Grid>
     </Grid>

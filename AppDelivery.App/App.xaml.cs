@@ -8,7 +8,7 @@ namespace AppDelivery.App
         {
             InitializeComponent();
 
-            MainPage = new Login();
+            MainPage = new NavigationPage(new Login());
         }
     }
 }

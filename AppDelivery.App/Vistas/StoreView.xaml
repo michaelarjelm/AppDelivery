@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppDelivery.App.Vistas.StoreView"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#4F3F9B"
+             Title="StoreView">
+    <Grid RowDefinitions=".3*,.7*">
+        <VerticalStackLayout Spacing="10">
+            <Label
+                Margin="25,25,0,0"
+                FontAttributes="Bold"
+                FontFamily="Lato-Bold"
+                Text="Dirección de entrega"
+                TextColor="White"/>
+            <Grid Margin="25,10,0,0" ColumnDefinitions="Auto,*">
+                <Label x:Name="lblDireccionEntrega"
+                         FontFamily="Lato-Regular"
+                         Text="Alameda 1234"
+                         TextColor="White"
+                         VerticalOptions="Center"/>
+                <Image Grid.Column="1"
+                       Margin="15,0,0,0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       WidthRequest="15">
+
+                    <Image.Source>
+                        <FontImageSource
+                            FontFamily="AwesomeSolid"
+                            Glyph="&#xf078;"
+                            Color="White"/>
+                    </Image.Source>
+                </Image>                
+            </Grid>
+            <Grid Margin="25,10,0,0" ColumnDefinitions=".9*,.1*">
+                <Border Padding="0" StrokeShape="RoundRectangle 8,8,8,8">
+                    <Grid ColumnDefinitions=".1*,.9*">
+                        <Image HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               WidthRequest="20">
+                            <Image.Source>
+                                <FontImageSource FontFamily="AwesomeSolid"
+                                                 Glyph="&#xf002;"/>
+                            </Image.Source>
+                        </Image>
+                        <Entry
+                            Grid.Column="1"
+                            FontFamily="Lato-Bold"
+                            Placeholder="Buscar tienda"
+                            PlaceholderColor="#9D9D9D"
+                            TextColor="White"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </VerticalStackLayout>
+        <Grid Grid.Row="1" Margin="0,-80,0,0">
+            <RoundRectangle BackgroundColor="#F2F1F6" CornerRadius="25,25,0,0"/>
+            <CollectionView x:Name="TiendasList">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="15" Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="20,20,20,0" HeightRequest="250" RowDefinitions=".6*,.4*">
+                            <RoundRectangle Grid.RowSpan="2"
+                                            Background="White"
+                                            CornerRadius="10">
+                                <RoundRectangle.Shadow>
+                                    <Shadow Brush="#CFD0D4"
+                                            Opacity="0.8"
+                                            Offset="10,10"/>
+                                </RoundRectangle.Shadow>
+                            </RoundRectangle>
+                            <Grid ColumnDefinitions=".4*,.2*,.4*"
+                                  RowDefinitions=".6*,.4*">
+                                <Image
+                                    Grid.RowSpan="2"
+                                    Grid.ColumnSpan="3"
+                                    Aspect="AspectFill"
+                                    Source="{Binding Cabecera}"/>
+                                <Grid Grid.Row="1"
+                                      Margin="0,0,0,15"
+                                      HeightRequest="100"
+                                      HorizontalOptions="Start"
+                                      VerticalOptions="Center"
+                                      WidthRequest="100">
+                                    <Border Margin="0,0,0,10"
+                                            HeightRequest="70"
+                                            HorizontalOptions="Center"
+                                            StrokeShape="Ellipse"
+                                            StrokeThickness="4">
+                                        <Border.Stroke>
+                                            <LinearGradientBrush EndPoint="0,1">
+                                                <GradientStop Offset="0.0" Color="#FEFEEF"/>
+                                                <GradientStop Offset="0.25" Color="#EBD570"/>
+                                                <GradientStop Offset="0.5" Color="#FF94C3"/>
+                                                <GradientStop Offset="0.75" Color="#A573E4"/>
+                                                <GradientStop Offset="1.0" Color="#A9E2EE"/>
+                                            </LinearGradientBrush>
+                                        </Border.Stroke>
+                                        <Image HorizontalOptions="Center"
+                                               Source="{Binding Logo}"/>
+                                    </Border>
+                                    
+                                </Grid>
+                                <Grid Grid.Row="1" Grid.Column="2">
+                                    <RoundRectangle CornerRadius="10"
+                                                    Fill="#F8F8F7"
+                                                    HeightRequest="35"
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center"
+                                                    WidthRequest="75"/>
+                                    <HorizontalStackLayout HorizontalOptions="Center"
+                                                           VerticalOptions="Center">
+                                        <Image Margin="0,0,15,0"
+                                               VerticalOptions="Center"
+                                               WidthRequest="15">
+                                            <Image.Source>
+                                                <FontImageSource
+                                                    FontFamily="AwesomeSolid"
+                                                    Glyph="&#xf005;"
+                                                    Color="Gold"/>
+                                            </Image.Source>
+                                        </Image>
+                                        <Label Grid.Row="1"
+                                               FontFamily="Lato-Bold"
+                                               Text="{Binding Calificacion}"
+                                               TextColor="Black"
+                                               VerticalTextAlignment="Center"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </Grid>
+</ContentPage>

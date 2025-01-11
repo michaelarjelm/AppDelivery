@@ -24,7 +24,8 @@ namespace AppDelivery.App
             });       
             
 
-            MainPage = new NavigationPage(new StoreView());
+            MainPage = new NavigationPage(new 
+                Login());
         }
     }
 }

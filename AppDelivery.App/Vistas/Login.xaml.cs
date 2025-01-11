@@ -25,8 +25,7 @@ public partial class Login : ContentPage
             bool isValid = await AuthHelper.LoginUserAsync(email, password);
             if (isValid)
             {
-                await DisplayAlert("Exito", "Hiciste Login de manera correcta", "Ok");
-                await Navigation.PushAsync(new MainPage());
+                await Navigation.PushAsync(new StoreView());
             }
         }
         catch (Exception)
